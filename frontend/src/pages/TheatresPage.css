@@ -1,0 +1,129 @@
+.theatres-page {
+  min-height: 80vh;
+}
+
+.theatres-hero {
+  text-align: center;
+  padding: 3rem 1.5rem 2rem;
+  background: linear-gradient(135deg, rgba(88, 28, 135, 0.3), rgba(15, 3, 30, 0.8));
+}
+.theatres-hero h1 {
+  font-size: 2.5rem;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+.theatres-hero p {
+  color: var(--white-50);
+  font-size: 1.1rem;
+}
+
+.theatres-stats {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem 1.5rem;
+  flex-wrap: wrap;
+}
+.stat-card {
+  text-align: center;
+  padding: 1.5rem 2.5rem;
+  border-radius: var(--radius-lg);
+  min-width: 140px;
+}
+.stat-num {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.stat-label {
+  color: var(--white-50);
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.theatres-content {
+  padding: 1rem 24px 4rem;
+}
+.theatres-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.theatre-card {
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.theatre-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.theatre-card-header h3 {
+  font-size: 1.2rem;
+  color: var(--white);
+}
+.theatre-rating {
+  color: #fbbf24;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.theatre-address {
+  color: var(--white-50);
+  font-size: 0.9rem;
+}
+.theatre-meta {
+  color: var(--white-70);
+  font-size: 0.88rem;
+}
+.theatre-formats {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.format-tag {
+  padding: 4px 12px;
+  background: rgba(168, 85, 247, 0.15);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: var(--radius-full);
+  color: var(--purple-300);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+.theatre-btn {
+  margin-top: 8px;
+  padding: 10px 20px;
+  background: var(--gradient-accent);
+  border: none;
+  border-radius: var(--radius-md);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+.theatre-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .theatres-stats {
+    gap: 1rem;
+  }
+  .stat-card {
+    padding: 1rem 1.5rem;
+    min-width: 120px;
+  }
+  .theatres-grid {
+    grid-template-columns: 1fr;
+  }
+}

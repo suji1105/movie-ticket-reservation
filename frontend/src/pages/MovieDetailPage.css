@@ -1,0 +1,44 @@
+.movie-detail {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgba(13,0,21,0.6);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(12px);
+  color: var(--white-100);
+}
+
+.detail-header {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.detail-poster {
+  width: 250px;
+  height: auto;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-purple);
+}
+
+.detail-info h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.detail-genres, .detail-description {
+  margin-top: 0.5rem;
+  color: var(--white-50);
+}
+
+.detail-actions {
+  margin-top: 1.5rem;
+}
+
+.loading {
+  text-align: center;
+  padding: 4rem;
+  font-size: 1.2rem;
+  color: var(--white-50);
+}

@@ -1,0 +1,82 @@
+/* SeatSelectionPage.css */
+
+.seat-selection {
+  min-height: 100vh;
+  background: #14001f;
+  padding: 25px;
+  color: white;
+}
+
+.seat-selection h1 {
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+.seat-category {
+  margin-bottom: 25px;
+  background: rgba(255,255,255,0.04);
+  padding: 20px;
+  border-radius: 16px;
+}
+
+.seat-category h2 {
+  margin-bottom: 15px;
+  color: #d8b4fe;
+  font-size: 24px;
+}
+
+.seat-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.seat-btn {
+  width: 52px;
+  height: 42px;
+  border: none;
+  border-radius: 8px;
+  background: #544069;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.seat-btn:hover {
+  background: #7e22ce;
+}
+
+.selected {
+  background: #c084fc;
+  color: black;
+}
+
+.payment-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.payment-btn {
+  width: 280px;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(to right, #c084fc, #9333ea);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.payment-btn:hover {
+  transform: scale(1.03);
+}
+
+.payment-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

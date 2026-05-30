@@ -1,0 +1,142 @@
+.seat-layout {
+  padding: 24px;
+}
+
+/* Screen */
+.screen-container {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.screen-curve {
+  width: 70%;
+  height: 30px;
+  margin: 0 auto 8px;
+  border-top: 3px solid var(--purple-300);
+  border-radius: 50% 50% 0 0;
+  position: relative;
+  box-shadow: 0 -5px 20px rgba(192,132,252,0.3);
+}
+.screen-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--white-50);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+/* Legend */
+.seat-legend {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--white-70);
+}
+.legend-box {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+}
+.legend-box.available {
+  background: var(--white-10);
+  border: 1px solid var(--white-20);
+}
+.legend-box.selected {
+  background: var(--gradient-gold);
+}
+.legend-box.occupied {
+  background: var(--white-10);
+  opacity: 0.3;
+}
+
+/* Sections */
+.seat-section {
+  margin-bottom: 24px;
+}
+.section-label {
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--white-50);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  padding: 8px;
+  border-top: 1px solid var(--white-10);
+}
+
+/* Rows */
+.seat-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+.row-label {
+  width: 24px;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--purple-300);
+  flex-shrink: 0;
+}
+.seats {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+}
+
+/* Seat button */
+.seat {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px 6px 2px 2px;
+  background: var(--white-10);
+  border: 1px solid var(--white-20);
+  color: var(--white-70);
+  font-size: 0.65rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.seat:hover:not(.booked) {
+  background: var(--purple-600);
+  border-color: var(--purple-400);
+  color: var(--white);
+  transform: scale(1.15);
+}
+.seat.selected {
+  background: var(--gradient-gold);
+  border-color: var(--gold);
+  color: var(--purple-900);
+}
+.seat.booked {
+  background: var(--white-10);
+  border-color: transparent;
+  color: transparent;
+  cursor: not-allowed;
+  opacity: 0.25;
+}
+.seat.recliner {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px 8px 4px 4px;
+  font-size: 0.7rem;
+}
+
+@media (max-width: 768px) {
+  .seat { width: 24px; height: 24px; font-size: 0.55rem; }
+  .seat.recliner { width: 28px; height: 28px; }
+  .seats { gap: 2px; }
+  .screen-curve { width: 90%; }
+}

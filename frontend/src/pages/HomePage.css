@@ -1,0 +1,148 @@
+.home-page {
+  background: var(--purple-900);
+}
+
+/* Sections */
+.section {
+  padding: 60px 0;
+}
+.section-header {
+  margin-bottom: 32px;
+}
+.section-sub {
+  color: var(--white-50);
+  font-size: 1rem;
+  margin-top: -8px;
+}
+
+/* Trending Grid - 5 cards */
+.trending-section {
+  background: linear-gradient(180deg, var(--purple-900) 0%, var(--purple-800) 100%);
+}
+.trending-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+/* Browse Layout */
+.browse-section {
+  background: var(--purple-900);
+}
+.browse-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+.browse-left {
+  position: sticky;
+  top: 100px;
+}
+.city-movies-header h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.city-highlight {
+  color: var(--purple-300);
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.no-results {
+  text-align: center;
+  padding: 80px 20px;
+}
+.no-results-icon {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 16px;
+}
+.no-results h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+.no-results p {
+  color: var(--white-50);
+}
+
+/* Cities Section */
+.cities-section {
+  background: linear-gradient(180deg, var(--purple-800) 0%, var(--purple-900) 100%);
+}
+.cities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+.city-card {
+  padding: 20px;
+  transition: var(--transition);
+  cursor: pointer;
+}
+.city-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--purple-400);
+  box-shadow: var(--shadow-purple);
+}
+.city-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.city-card-icon {
+  font-size: 1.5rem;
+}
+.city-card-header h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.city-state {
+  font-size: 0.8rem;
+  color: var(--white-50);
+}
+.city-movie-posters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.city-movie-posters img {
+  width: 60px;
+  height: 85px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+.city-movie-posters img:hover {
+  transform: scale(1.1);
+}
+.city-movie-count {
+  font-size: 0.82rem;
+  color: var(--purple-300);
+  font-weight: 500;
+}
+
+@media (max-width: 1200px) {
+  .trending-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 900px) {
+  .trending-grid { grid-template-columns: repeat(2, 1fr); }
+  .browse-layout {
+    grid-template-columns: 1fr;
+  }
+  .browse-left { position: static; }
+}
+@media (max-width: 600px) {
+  .trending-grid { grid-template-columns: repeat(2, 1fr); }
+  .section { padding: 40px 0; }
+  .cities-grid { grid-template-columns: 1fr; }
+}

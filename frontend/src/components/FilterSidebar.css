@@ -1,0 +1,84 @@
+.filter-sidebar {
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  position: sticky;
+  top: 100px;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+}
+
+.filter-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.filter-header h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.clear-btn {
+  background: none;
+  border: none;
+  color: var(--purple-300);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.clear-btn:hover { color: var(--white); }
+
+.filter-group {
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--white-10);
+}
+.filter-group:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.filter-group h4 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--white-70);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.filter-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-chip {
+  padding: 7px 16px;
+  background: var(--white-10);
+  border: 1px solid var(--white-10);
+  border-radius: var(--radius-full);
+  color: var(--white-70);
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.filter-chip:hover {
+  background: var(--purple-700);
+  color: var(--white);
+  border-color: var(--purple-500);
+}
+.filter-chip.active {
+  background: var(--purple-500);
+  color: var(--white);
+  border-color: var(--purple-300);
+  box-shadow: 0 2px 10px rgba(123,45,142,0.3);
+}
+
+@media (max-width: 900px) {
+  .filter-sidebar {
+    position: static;
+    max-height: none;
+  }
+}

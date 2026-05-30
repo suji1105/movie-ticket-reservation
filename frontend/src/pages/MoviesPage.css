@@ -1,0 +1,95 @@
+.movies-page {
+  min-height: 80vh;
+}
+
+.movies-hero {
+  text-align: center;
+  padding: 3rem 1.5rem 2rem;
+  background: linear-gradient(135deg, rgba(88, 28, 135, 0.3), rgba(15, 3, 30, 0.8));
+}
+.movies-hero h1 {
+  font-size: 2.5rem;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+.movies-hero p {
+  color: var(--white-50);
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.movies-search-bar {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.movies-search-bar input {
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--white-20);
+  background: var(--white-10);
+  color: var(--white);
+  font-size: 1rem;
+  outline: none;
+  transition: var(--transition);
+}
+.movies-search-bar input:focus {
+  border-color: var(--purple-400);
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.15);
+}
+.movies-search-bar input::placeholder {
+  color: var(--white-50);
+}
+
+.movies-content {
+  padding: 2rem 24px;
+}
+.movies-layout {
+  display: flex;
+  gap: 2rem;
+}
+.movies-sidebar {
+  flex-shrink: 0;
+  width: 260px;
+}
+.movies-grid-area {
+  flex: 1;
+}
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+.movies-count {
+  margin-top: 1.5rem;
+  text-align: center;
+  color: var(--white-50);
+  font-size: 0.9rem;
+}
+
+.no-results {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--white-50);
+}
+.no-results-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+.no-results h3 {
+  color: var(--white-70);
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .movies-layout {
+    flex-direction: column;
+  }
+  .movies-sidebar {
+    width: 100%;
+  }
+  .movies-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}

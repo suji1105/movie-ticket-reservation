@@ -1,0 +1,131 @@
+.about-page {
+  min-height: 80vh;
+}
+.about-hero {
+  text-align: center;
+  padding: 3rem 1.5rem 2rem;
+  background: linear-gradient(135deg, rgba(88, 28, 135, 0.3), rgba(15, 3, 30, 0.8));
+}
+.about-hero h1 {
+  font-size: 2.5rem;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+.about-hero p {
+  color: var(--white-50);
+  font-size: 1.1rem;
+}
+
+.about-content {
+  padding: 2rem 24px 4rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-section {
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  margin-bottom: 2rem;
+}
+.about-section h2 {
+  font-size: 1.5rem;
+  color: var(--purple-300);
+  margin-bottom: 1rem;
+}
+.about-section p {
+  color: var(--white-70);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.about-stat {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border-radius: var(--radius-lg);
+}
+.about-stat-num {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.about-stat-label {
+  color: var(--white-50);
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+.about-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+.about-feature {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--white-10);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--white-10);
+}
+.feature-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.about-feature h4 {
+  color: var(--white);
+  margin-bottom: 0.3rem;
+}
+.about-feature p {
+  color: var(--white-50);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.about-team {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.team-card {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border-radius: var(--radius-lg);
+}
+.team-emoji {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.team-card h4 {
+  color: var(--white);
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+.team-card p {
+  color: var(--purple-300);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+  .about-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .about-features {
+    grid-template-columns: 1fr;
+  }
+  .about-team {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
