@@ -3,9 +3,12 @@ import MovieSlider from '../components/MovieSlider';
 import MovieCard from '../components/MovieCard';
 import FilterSidebar from '../components/FilterSidebar';
 import { movies as mockMovies, cities } from '../data/mockData';
+import { useCity } from '../contexts/CityContext';
 import './HomePage.css';
 
-export default function HomePage({ selectedCity }) {
+export default function HomePage() {
+  const { selectedCity } = useCity();
+
   const [filters, setFilters] = useState({ languages: [], genres: [], formats: [] });
 
   const filteredMovies = useMemo(() => {

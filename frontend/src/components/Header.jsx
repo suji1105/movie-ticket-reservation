@@ -1,15 +1,18 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { cities } from '../data/mockData';
+import { useCity } from '../contexts/CityContext';
 import './Header.css';
 
-export default function Header({ selectedCity, onCityChange }) {
+export default function Header() {
+  const { selectedCity, setSelectedCity } = useCity();
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [cityDropdown, setCityDropdown] = useState(false);
   const [mobileMenu, setMobileMenu] = useState(false);
   const cityRef = useRef(null);
   const navigate = useNavigate();
+
 
   useEffect(() => {
     const handleClick = (e) => {
@@ -45,9 +48,6 @@ export default function Header({ selectedCity, onCityChange }) {
           <Link to="/movies" className="nav-link" onClick={() => setMobileMenu(false)}>
             <span className="nav-icon"></span> Movies
           </Link>
-          <Link to="/stream" className="nav-link" onClick={() => setMobileMenu(false)}>
-            <span className="nav-icon"></span> Stream
-          </Link>
           <Link to="/theatres" className="nav-link" onClick={() => setMobileMenu(false)}>
             <span className="nav-icon"></span> Theatre
           </Link>
@@ -56,6 +56,9 @@ export default function Header({ selectedCity, onCityChange }) {
           </Link>
           <Link to="/faq" className="nav-link" onClick={() => setMobileMenu(false)}>
             <span className="nav-icon"></span> FAQ
+          </Link>
+          <Link to="/helpline" className="nav-link" onClick={() => setMobileMenu(false)}>
+            <span className="nav-icon"></span> Helpline
           </Link>
           <Link to="/experience" className="nav-link" onClick={() => setMobileMenu(false)}>
             <span className="nav-icon"></span> Customer Experience
@@ -92,7 +95,7 @@ export default function Header({ selectedCity, onCityChange }) {
                       <button
                         key={city.id}
                         className={`city-option ${selectedCity?.id === city.id ? 'active' : ''}`}
-                        onClick={() => { onCityChange(city); setCityDropdown(false); }}
+                        onClick={() => { setSelectedCity(city); setCityDropdown(false); }}
                       >
                         {city.name}
                       </button>
@@ -107,7 +110,7 @@ export default function Header({ selectedCity, onCityChange }) {
                       <button
                         key={city.id}
                         className={`city-option ${selectedCity?.id === city.id ? 'active' : ''}`}
-                        onClick={() => { onCityChange(city); setCityDropdown(false); }}
+                        onClick={() => { setSelectedCity(city); setCityDropdown(false); }}
                       >
                         {city.name}
                       </button>

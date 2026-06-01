@@ -1,9 +1,11 @@
 import { createContext, useContext, useState } from 'react';
+import { cities } from '../data/mockData';
 
 const CityContext = createContext();
 
 export function CityProvider({ children }) {
-  const [selectedCity, setSelectedCity] = useState(null);
+  // Initialize to Chennai (cities[0]) by default so the header says Chennai and the theatres match
+  const [selectedCity, setSelectedCity] = useState(cities[0]);
   return (
     <CityContext.Provider value={{ selectedCity, setSelectedCity }}>
       {children}
@@ -18,3 +20,4 @@ export function useCity() {
   }
   return context;
 }
+
