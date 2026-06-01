@@ -34,7 +34,7 @@ export default function TheatresPage() {
           <span className="stat-label">Screens</span>
         </div>
         <div className="stat-card glass">
-          <span className="stat-num">50M+</span>
+          <span className="stat-num">10M+</span>
           <span className="stat-label">Happy Viewers</span>
         </div>
       </div>
@@ -46,7 +46,7 @@ export default function TheatresPage() {
             <div key={theatre.id} className="theatre-card glass animate-fadeInUp" style={{ animationDelay: `${i * 0.08}s` }}>
               <div className="theatre-card-header">
                 <h3>{theatre.name}</h3>
-                <span className="theatre-rating">⭐ {theatre.rating}</span>
+                <span className="theatre-rating">⭐⭐⭐⭐ {theatre.rating}</span>
               </div>
               <p className="theatre-address">📍 {theatre.address}, {theatre.city}</p>
               <div className="theatre-meta">

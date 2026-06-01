@@ -313,7 +313,7 @@ export default function PaymentPage() {
             </p>
 
             <p className="payment-movie__theatre">
-              🎭 {theatre}
+              {theatre}
             </p>
           </div>
         </div>
@@ -556,21 +556,21 @@ export default function PaymentPage() {
             </h3>
 
             <div className="payment-modal__info">
-              <p>
-                🎬 <strong>{movie.title}</strong>
-              </p>
-              <p>📍 {city}</p>
-              <p>🎭 {theatre}</p>
-              <p>📅 {date}</p>
-              <p>🕒 {time}</p>
-              <p>
+                <h3>
+                <strong>{movie.title}</strong>
+              </h3>
+              <h5>📍 {city}</h5>
+              <h5>🎬{theatre}</h5>
+              <h5>📅 {date}</h5>
+              <h5>🕒 {time}</h5>
+              <h5>
                 🎟 <strong>Seats:</strong>{' '}
                 {selectedSeats
                   .map((seat) => seat.label)
                   .join(', ')}
-              </p>
+              </h5>
               {foodTotal > 0 && (
-                <p>
+                <h6>
                   🍿 <strong>Snacks:</strong>{' '}
                   {Object.entries(foodQuantities)
                     .filter(([_, qty]) => qty > 0)
@@ -579,7 +579,7 @@ export default function PaymentPage() {
                       return `${item.icon} ${item.name} (x${qty})`;
                     })
                     .join(', ')}
-                </p>
+                </h6>
               )}
               {discount > 0 && (
                 <p className="payment-discount-msg">

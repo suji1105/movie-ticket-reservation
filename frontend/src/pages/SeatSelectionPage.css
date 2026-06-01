@@ -18,7 +18,12 @@
   --glass-blur: blur(12px);
 }
 
-/* ===== Page ===== */
+.seat-content {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
 .seat-page {
   min-height: 100vh;
   background: linear-gradient(180deg, #0d0015 0%, #1a0030 50%, #0d0015 100%);
@@ -243,16 +248,19 @@
 }
 
 /* ===== Screen ===== */
+/* ===== Screen ===== */
 .seat-screen-wrapper {
   width: 100%;
   max-width: 480px;
   margin: 30px auto 20px;
   display: flex;
   justify-content: center;
+  padding: 0 12px; /* add side padding for small screens */
 }
 
 .seat-screen {
-  width: 80%;
+  width: 100%;
+  max-width: 100%;
   height: 36px;
   border-radius: 0 0 50% 50%;
   border: 2px solid var(--white-20);
@@ -331,6 +339,8 @@
   bottom: 0;
   left: 0;
   right: 0;
+  max-width: 560px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -391,13 +401,13 @@
 /* ===== Responsive ===== */
 @media (max-width: 600px) {
   .seat-btn {
-    width: 26px;
-    height: 26px;
-    font-size: 0.6rem;
+    width: 22px;
+    height: 22px;
+    font-size: 0.55rem;
   }
 
   .seat-btn.seat-aisle {
-    margin-right: 14px;
+    margin-right: 12px;
   }
 
   .seat-row-label {
@@ -412,6 +422,29 @@
   .seat-pay-btn {
     padding: 10px 22px;
     font-size: 0.85rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .seat-pay-bar {
+    left: 16px;
+    right: 16px;
+    max-width: none;
+    margin: 0;
+  }
+
+  .seat-pay-info {
+    align-items: center;
+    text-align: center;
+  }
+
+  .seat-screen-wrapper {
+    padding: 0 8px;
+  }
+
+  .seat-screen {
+    width: 100%;
+    font-size: 0.65rem;
   }
 
   .seat-map-container {
@@ -429,14 +462,14 @@
 
 @media (max-width: 380px) {
   .seat-btn {
-    width: 22px;
-    height: 22px;
-    font-size: 0.55rem;
+    width: 18px;
+    height: 18px;
+    font-size: 0.45rem;
     border-radius: 3px;
   }
 
   .seat-btn.seat-aisle {
-    margin-right: 10px;
+    margin-right: 8px;
   }
 
   .seat-row-seats {

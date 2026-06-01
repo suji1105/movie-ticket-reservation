@@ -339,76 +339,173 @@
   opacity: 1;
 }
 
-/* ---- Responsive ---- */
+/* ---- Mobile Centering for Showtimes ---- */
+@media (max-width: 768px) {
+  .showtimes-page {
+    align-items: center;
+    padding: 10px;
+  }
+  .showtimes-theatre-list,
+  .showtimes-theatre-card {
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+}
+
+/* ---- Mobile Centering for Seat Selection ---- */
 @media (max-width: 600px) {
+  .seat-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+  .seat-section {
+    max-width: 100%;
+    width: 100%;
+  }
+  .seat-map-container {
+    max-width: 560px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .showtimes-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
   .showtimes-topbar {
-    padding: 12px 16px;
+    padding: 12px 14px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .showtimes-movie-title {
     font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 65vw;
+  }
+
+  .showtimes-date-selector {
+    width: 100%;
   }
 
   .showtimes-date-scroll {
-    padding: 0 16px;
+    padding: 8px 10px;
+    gap: 6px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .showtimes-date-item {
-    min-width: 56px;
-    padding: 8px 10px;
+    min-width: 48px;
+    flex: 1;
+    padding: 10px 6px;
+    border-radius: 10px;
   }
 
-  .date-num {
-    font-size: 1rem;
-  }
+  .date-day { font-size: 0.6rem; }
+  .date-num { font-size: 1.1rem; }
+  .date-month { font-size: 0.55rem; }
 
   .showtimes-format-badge-row {
-    padding: 10px 16px;
+    padding: 10px 12px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .showtimes-filters {
-    padding: 10px 16px;
+    padding: 10px 12px;
+    gap: 6px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .filter-chip {
+    padding: 6px 12px;
+    font-size: 0.75rem;
   }
 
   .showtimes-theatre-list {
-    padding: 12px 16px 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .showtimes-theatre-card {
-    padding: 16px 0;
+    padding: 14px 12px;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    width: 100%;
+    box-sizing: border-box;
   }
 
-  .theatre-name {
-    font-size: 0.85rem;
-  }
-
-  .theatre-shows-row {
-    padding-left: 28px;
+  .theatre-name-row {
     gap: 8px;
   }
 
-  .showtime-btn {
-    padding: 8px 12px;
-    min-width: 78px;
-  }
-
-  .showtime-time {
-    font-size: 0.78rem;
+  .theatre-name {
+    font-size: 0.88rem;
+    line-height: 1.3;
   }
 
   .theatre-cancel-label {
-    padding-left: 28px;
+    padding-left: 0;
+    font-size: 0.7rem;
+  }
+
+  .theatre-address-row {
+    padding-left: 0;
+    margin-top: 4px;
+  }
+
+  .theatre-shows-row {
+    padding-left: 0;
+    gap: 8px;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .showtime-btn {
+    flex: 1;
+    min-width: 72px;
+    max-width: calc(33% - 6px);
+    padding: 10px 6px;
+    font-size: 0.78rem;
+    border-radius: 10px;
+  }
+
+  .showtime-time {
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+
+  .showtime-format {
+    font-size: 0.55rem;
   }
 }
 
 @media (max-width: 380px) {
   .showtimes-date-item {
-    min-width: 50px;
-    padding: 6px 8px;
+    min-width: 40px;
+    padding: 8px 4px;
   }
 
   .showtime-btn {
-    min-width: 68px;
-    padding: 7px 10px;
+    min-width: 64px;
+    padding: 8px 4px;
   }
 }
+

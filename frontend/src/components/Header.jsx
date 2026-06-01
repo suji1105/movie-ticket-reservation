@@ -39,10 +39,9 @@ export default function Header() {
   return (
     <header className="header">
       <div className="header-inner">
-        <Link to="/" className="logo">
-          <div className="logo-icon">🎬</div>
+        <div className="logo">
           <span className="logo-text">Cine<span className="logo-accent">Vault</span></span>
-        </Link>
+        </div>
 
         <nav className={`nav ${mobileMenu ? 'nav-open' : ''}`}>
           <Link to="/movies" className="nav-link" onClick={() => setMobileMenu(false)}>

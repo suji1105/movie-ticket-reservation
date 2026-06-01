@@ -103,113 +103,115 @@ const date = searchParams.get('date') || 'Today';
 
   return (
     <div className="seat-page">
-      {/* TOP BAR */}
-      <div className="seat-topbar">
-        <button className="seat-back-btn" onClick={() => navigate(-1)}>
-          ←
-        </button>
-        <div className="seat-topbar-info">
-          <h2 className="seat-topbar-title">{movieTitle}</h2>
-          <p className="seat-topbar-theatre">
-  {city} • {theatre}
-</p>
+      <div className="seat-content">
+        {/* TOP BAR */}
+        <div className="seat-topbar">
+          <button className="seat-back-btn" onClick={() => navigate(-1)}>
+            ←
+          </button>
+          <div className="seat-topbar-info">
+            <h2 className="seat-topbar-title">{movieTitle}</h2>
+            <p className="seat-topbar-theatre">
+              {city} • {theatre}
+            </p>
+          </div>
         </div>
-      </div>
 
-      {/* DATE + TICKET COUNT */}
-      <div className="seat-meta-row">
-        <span className="seat-meta-date">{date}</span>
-        <span className="seat-meta-tickets">
-          ✏ {selectedSeats.length || 2} Ticket{selectedSeats.length !== 1 ? 's' : ''}
-        </span>
-      </div>
+        {/* DATE + TICKET COUNT */}
+        <div className="seat-meta-row">
+          <span className="seat-meta-date">{date}</span>
+          <span className="seat-meta-tickets">
+            {selectedSeats.length || 1} Ticket{selectedSeats.length !== 1 ? 's' : ''}
+          </span>
+        </div>
 
-      {/* TIME SLOT BADGE */}
-      <div className="seat-time-row">
-        <span className="seat-time-badge">{time}</span>
-      </div>
+        {/* TIME SLOT BADGE */}
+        <div className="seat-time-row">
+          <span className="seat-time-badge">{time}</span>
+        </div>
 
-      {/* SEAT MAP */}
-      <div className="seat-map-container">
-        {sections.map((section) => (
-          <div key={section.name} className="seat-section">
-            <div className="seat-section-header">
-              <span className="seat-section-name">{section.name}</span>
-              <span className="seat-section-price">₹{section.price}</span>
-            </div>
-
-            {section.rows.map((row) => (
-              <div key={row.rowLetter} className="seat-row">
-                <span className="seat-row-label">{row.rowLetter}</span>
-                <div className="seat-row-seats">
-                  {row.seats.map((seat) => {
-                    const isSelected = selectedSeats.some((s) => s.id === seat.id);
-                    let seatClass = 'seat-btn';
-                    if (seat.sold) seatClass += ' seat-sold';
-                    else if (isSelected) seatClass += ' seat-selected';
-                    else seatClass += ' seat-available';
-
-                    const isAisle = seat.number === 7;
-
-                    return (
-                      <button
-                        key={seat.id}
-                        className={`${seatClass}${isAisle ? ' seat-aisle' : ''}`}
-                        disabled={seat.sold}
-                        onClick={() => !seat.sold && toggleSeat(seat.id, section)}
-                        title={`${seat.id} - ₹${section.price}`}
-                      >
-                        {seat.label}
-                      </button>
-                    );
-                  })}
-                </div>
+        {/* SEAT MAP */}
+        <div className="seat-map-container">
+          {sections.map((section) => (
+            <div key={section.name} className="seat-section">
+              <div className="seat-section-header">
+                <span className="seat-section-name">{section.name}</span>
+                <span className="seat-section-price">₹{section.price}</span>
               </div>
-            ))}
-          </div>
-        ))}
 
-        {/* SCREEN */}
-        <div className="seat-screen-wrapper">
-          <div className="seat-screen">
-            <span>All eyes this way please</span>
+              {section.rows.map((row) => (
+                <div key={row.rowLetter} className="seat-row">
+                  <span className="seat-row-label">{row.rowLetter}</span>
+                  <div className="seat-row-seats">
+                    {row.seats.map((seat) => {
+                      const isSelected = selectedSeats.some((s) => s.id === seat.id);
+                      let seatClass = 'seat-btn';
+                      if (seat.sold) seatClass += ' seat-sold';
+                      else if (isSelected) seatClass += ' seat-selected';
+                      else seatClass += ' seat-available';
+
+                      const isAisle = seat.number === 7;
+
+                      return (
+                        <button
+                          key={seat.id}
+                          className={`${seatClass}${isAisle ? ' seat-aisle' : ''}`}
+                          disabled={seat.sold}
+                          onClick={() => !seat.sold && toggleSeat(seat.id, section)}
+                          title={`${seat.id} - ₹${section.price}`}
+                        >
+                          {seat.label}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              ))}
+            </div>
+          ))}
+
+          {/* SCREEN */}
+          <div className="seat-screen-wrapper">
+            <div className="seat-screen">
+              <span>All eyes this way please</span>
+            </div>
+          </div>
+
+          {/* LEGEND */}
+          <div className="seat-legend">
+            <div className="seat-legend-item">
+              <span className="legend-box legend-available"></span>
+              <span>Available</span>
+            </div>
+            <div className="seat-legend-item">
+              <span className="legend-box legend-selected"></span>
+              <span>Selected</span>
+            </div>
+            <div className="seat-legend-item">
+              <span className="legend-box legend-sold"></span>
+              <span>Sold</span>
+            </div>
           </div>
         </div>
 
-        {/* LEGEND */}
-        <div className="seat-legend">
-          <div className="seat-legend-item">
-            <span className="legend-box legend-available"></span>
-            <span>Available</span>
+        {/* BOTTOM PAY BAR */}
+        <div className="seat-pay-bar">
+          <div className="seat-pay-info">
+            <span className="seat-pay-count">
+              {selectedSeats.length} Seat{selectedSeats.length !== 1 ? 's' : ''} Selected
+            </span>
+            <span className="seat-pay-seats">
+              {selectedSeats.map((s) => s.id).join(', ')}
+            </span>
           </div>
-          <div className="seat-legend-item">
-            <span className="legend-box legend-selected"></span>
-            <span>Selected</span>
-          </div>
-          <div className="seat-legend-item">
-            <span className="legend-box legend-sold"></span>
-            <span>Sold</span>
-          </div>
+          <button
+            className={`seat-pay-btn ${selectedSeats.length === 0 ? 'disabled' : ''}`}
+            onClick={handlePay}
+            disabled={selectedSeats.length === 0}
+          >
+            Pay ₹{totalAmount}
+          </button>
         </div>
-      </div>
-
-      {/* BOTTOM PAY BAR */}
-      <div className="seat-pay-bar">
-        <div className="seat-pay-info">
-          <span className="seat-pay-count">
-            {selectedSeats.length} Seat{selectedSeats.length !== 1 ? 's' : ''} Selected
-          </span>
-          <span className="seat-pay-seats">
-            {selectedSeats.map((s) => s.id).join(', ') || '—'}
-          </span>
-        </div>
-        <button
-          className={`seat-pay-btn${selectedSeats.length === 0 ? ' disabled' : ''}`}
-          onClick={handlePay}
-          disabled={selectedSeats.length === 0}
-        >
-          Pay ₹{totalAmount}
-        </button>
       </div>
     </div>
   );

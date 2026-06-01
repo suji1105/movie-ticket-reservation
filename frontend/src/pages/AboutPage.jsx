@@ -2,10 +2,10 @@ import './AboutPage.css';
 
 export default function AboutPage() {
   const team = [
-    { name: 'Arjun Mehta', role: 'CEO & Founder', emoji: '👨‍💼' },
-    { name: 'Priya Sharma', role: 'CTO', emoji: '👩‍💻' },
-    { name: 'Karthik Rajan', role: 'Head of Design', emoji: '🎨' },
-    { name: 'Deepa Nair', role: 'VP of Operations', emoji: '📊' },
+    { name: 'Suji Muralidharan & Karthi Manickam', role: 'CEO & Founder', emoji: '👨‍💼' },
+    { name: 'Muralidharan', role: 'CTO', emoji: '👩‍💻' },
+    { name: 'Mano Subramaniam', role: 'Head of Design', emoji: '🎨' },
+    { name: 'Madhu Manoharan', role: 'VP of Operations', emoji: '📊' },
   ];
 
   return (

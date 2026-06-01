@@ -90,11 +90,11 @@ export default function ExperiencePage() {
               <div className="form-row">
                 <div className="form-group">
                   <label htmlFor="name">Your Name</label>
-                  <input id="name" name="name" type="text" placeholder="John Doe" value={formData.name} onChange={handleChange} required />
+                  <input id="name" name="name" type="text" placeholder="Enter Your Name" value={formData.name} onChange={handleChange} required />
                 </div>
                 <div className="form-group">
                   <label htmlFor="email">Email</label>
-                  <input id="email" name="email" type="email" placeholder="john@example.com" value={formData.email} onChange={handleChange} required />
+                  <input id="email" name="email" type="email" placeholder="Enter Your Email" value={formData.email} onChange={handleChange} required />
                 </div>
               </div>
               <div className="form-group">

@@ -27,7 +27,7 @@ export default function HelplinePage() {
   return (
     <div className="helpline-page container">
       <div className="helpline-header">
-        <h1>📞 Customer Helpline</h1>
+        <h1>Customer Helpline</h1>
         <p>Need assistance with your booking or have a query? We are here to help!</p>
       </div>
 
@@ -48,6 +48,30 @@ export default function HelplinePage() {
               <strong>Email Support</strong>
               <p>support@cinevault.com</p>
               <small>Reply within 2 hours</small>
+            </div>
+          </div>
+          <div className="info-item">
+            <span className="icon">📍</span>
+            <div>
+              <strong>Head Office</strong>
+              <p>CineVault Tower, 45 Cinema Road</p>
+              <small>Mumbai, Maharashtra 400001</small>
+            </div>
+          </div>
+          <div className="info-item">
+            <span className="icon">💬</span>
+            <div>
+              <strong>Live Chat</strong>
+              <p>In-app support</p>
+              <small>Instant resolution</small>
+            </div>
+          </div>
+          <div className="info-item">
+            <span className="icon">🤝</span>
+            <div>
+              <strong>Corporate Bookings</strong>
+              <p>corporate@cinevault.com</p>
+              <small>Special bulk discounts</small>
             </div>
           </div>
         </div>
